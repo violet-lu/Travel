@@ -21,7 +21,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .headerView {
     width: 375px;
     height: 46px;
