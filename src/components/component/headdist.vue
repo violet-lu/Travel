@@ -21,31 +21,31 @@ export default {
         id: '0001',
         imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png',
         desc: '景点门票'
-      },{
+      }, {
         id: '0002',
         imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png',
         desc: '景点门票'
-      },{
+      }, {
         id: '0003',
         imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png',
         desc: '景点门票'
-      },{
+      }, {
         id: '0004',
         imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png',
         desc: '景点门票'
-      },{
+      }, {
         id: '0005',
         imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png',
         desc: '景点门票'
-      },{
+      }, {
         id: '0006',
         imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png',
         desc: '景点门票'
-      },{
+      }, {
         id: '0007',
         imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png',
         desc: '景点门票'
-      },{
+      }, {
         id: '0008',
         imgUrl: 'https://imgs.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png',
         desc: '景点门票'
@@ -53,16 +53,16 @@ export default {
     }
   },
   computed: {
-      pages () {
-        const pages = []
-        this.iconList.forEach((item, index) => {
-            const page = Math.floor(index / 8)
-              if (!pages[page]) {
-                pages[page] = []
-              }
-              pages[page].push(item)
-          })
-        return pages
+    pages () {
+      const pages = []
+      this.iconList.forEach((item, index) => {
+        const page = Math.floor(index / 8)
+        if (!pages[page]) {
+          pages[page] = []
+        }
+        pages[page].push(item)
+      })
+      return pages
     }
   }
 }
