@@ -1,10 +1,10 @@
 <template>
   <div>
     <head-line :city="city"></head-line>
-    <head-pic></head-pic>
-    <head-dist></head-dist>
-    <head-sell></head-sell>
-    <head-week></head-week>
+    <head-pic :list="swiperList"></head-pic>
+    <head-dist :iconlist="iconList"></head-dist>
+    <head-sell :selllist="sellList"></head-sell>
+    <head-week :weeklist="weekList"></head-week>
   </div>
 </template>
 
@@ -26,12 +26,16 @@ export default {
   },
   data () {
     return {
-      city: ''
+      city: '',
+      swiperList: [],
+      iconList: [],
+      sellList: [],
+      weekList: []
     }
   },
   methods: {
     getHomeInfo () {
-      axios.get('/api/index.json')
+      axios.get('../../../static/mock/index.json')
         .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {
@@ -39,6 +43,10 @@ export default {
       if (res.ret && res.data) {
         const data = res.data
         this.city = data.city
+        this.swiperList = data.swiperList
+        this.iconList = data.iconList
+        this.sellList = data.recommendList
+        this.weekList = data.weekendList
       }
     }
   },

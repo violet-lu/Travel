@@ -1,7 +1,7 @@
 <template>
   <div class="wraper">
     <swiper class="img" :options="swiperOptions">
-      <swiper-slide v-for="item of swiperList" :key="item.id">
+      <swiper-slide v-for="item of list" :key="item.id">
         <img class="swiperimg" :src="item.imgUrl" />
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -12,19 +12,15 @@
 <script>
 export default {
   name: 'HeadPic',
+  props: {
+    list: Array
+  },
   data () {
     return {
       swiperOptions: {
         pagination: '.swiper-pagination',
         loop: true
-      },
-      swiperList: [{
-        id: '0001',
-        imgUrl: 'https://imgs.qunarzz.com/vs_ceph_vcimg/280673be5655fc91ce24ba605c62fe07.jpeg'
-      }, {
-        id: '0002',
-        imgUrl: 'https://imgs.qunarzz.com/vs_ceph_vcimg/280673be5655fc91ce24ba605c62fe07.jpeg'
-      }]
+      }
     }
   }
 }
