@@ -42,6 +42,8 @@ export default {
 .headerView {
   width: 375px;
   height: 150px;
+  padding: 5px;
+  padding-top: 8px;
 }
 .flexDist {
   border: 0 solid #ccc;

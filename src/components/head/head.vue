@@ -27,10 +27,10 @@ export default {
   data () {
     return {
       city: '',
-      swiperList: '',
-      iconList: '',
-      sellList: '',
-      weekList: ''
+      swiperList: [],
+      iconList: [],
+      sellList: [],
+      weekList: []
     }
   },
   methods: {

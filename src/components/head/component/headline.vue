@@ -27,13 +27,14 @@ export default {
 <style scoped>
   .headerView {
     width: 375px;
-    height: 46px;
+    height: 50px;
     background-color: #00bcd4;
   }
   .headerReturn {
     width: 10%;
     float: left;
     height: 100%;
+    text-align: center;
   }
   .iconfont {
     width: 35px;

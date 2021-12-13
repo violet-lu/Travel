@@ -24,9 +24,6 @@ export default {
   name: 'HeadWeek',
   props: {
     weeklist: Array
-  },
-  data () {
-    return {}
   }
 }
 </script>
@@ -41,12 +38,13 @@ export default {
   padding: 7px;
 }
 .weekPic {
-  width: 100%;
+  width: 375px;
   height: 137.41px;
 }
 .img {
-  width: 375px;
-  height: 137.41px;
+  width: 370px;
+  height: 137px;
+  float: left;
 }
 .weekTitle {
   padding: 8px;

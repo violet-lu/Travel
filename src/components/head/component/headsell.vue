@@ -21,10 +21,6 @@ export default {
   name: 'HeadSell',
   props: {
     selllist: Array
-  },
-  data () {
-    return {
-    }
   }
 }
 </script>
