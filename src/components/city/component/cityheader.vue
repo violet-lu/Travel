@@ -22,21 +22,38 @@ export default {
 
 <style scoped>
 .header {
-  width: 375px;
-  height: 46px;
+  width: 365px;
+  height: 60px;
   background-color: #00bcd4;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .upper {
   width: 375px;
-  height: 50%;
+  height: 43%;
   padding: 2px;
 }
 .return {
   float: left;
+  padding-top: 7px;
+  color:beige
 }
 .content {
   text-align: center;
   color: white;
-  padding-top: 3px;
+  padding-top: 7px;
+  padding-right: 25px;
 }
+.search {
+  border-radius: 3px;
+  background-color: white;
+  padding: 5px;
+  margin-right: 7px;
+  margin-left: 7px;
+  margin-bottom: 9px;
+  width: 340px;
+  text-align: center;
+  color: lightsteelblue;
+}
+
 </style>
