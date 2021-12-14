@@ -1,9 +1,11 @@
 <template>
   <div class="header">
       <div class="upper">
-        <div class="return">
-          <span class="iconfont">&#xe624;</span>
-        </div>
+        <router-link to='/#'>
+          <div class="return">
+            <span class="iconfont">&#xe624;</span>
+          </div>
+        </router-link>
         <div class="content">
           <p class="text">城市选择</p>
         </div>

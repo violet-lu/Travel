@@ -7,11 +7,12 @@
       <span class="search">&#xe624;</span>
       输入城市/景点/游玩主题
     </div>
-    <div class="headerCity">
-      <p class="city">{{this.city}}</p>
-      <span class="cityiconfont">&#xe624;</span>
-    </div>
-
+    <router-link to='/city'>
+      <div class="headerCity">
+        <p class="city">{{this.city}}</p>
+        <span class="cityiconfont">&#xe624;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
