@@ -1,192 +1,53 @@
 <template>
-  <div ref="wrapper">
+  <div class="wrapper">
     <div>
         <div class="recent">
-        <div class="recentCity">
+          <div class="recentCity">
             <p class="content">当前城市</p>
-        </div>
-        <div class="recent-city">
+          </div>
+          <div class="recent-city">
             <div class="cityborder">
-            <p class="text">北京</p>
+              <p class="text">北京</p>
             </div>
-        </div>
+          </div>
         </div>
         <div class="hot">
-        <div class="recentCity">
+          <div class="hotCity">
             <p class="content">热门城市</p>
-        </div>
-        <div class="hot-city">
-            <div class="cityborder">
-            <p class="text">北京</p>
+          </div>
+          <div class="hot-city">
+            <div class="hot-cityborder" v-for="item of hotcities" :key="item.id">
+              <p class="text">{{item.name}}</p>
             </div>
-            <div class="cityborder">
-            <p class="text">北京</p>
-            </div>
-            <div class="cityborder">
-            <p class="text">北京</p>
-            </div>
-            <div class="cityborder">
-            <p class="text">北京</p>
-            </div>
-            <div class="cityborder">
-            <p class="text">北京</p>
-            </div>
-            <div class="cityborder">
-            <p class="text">北京</p>
-            </div>
-            <div class="cityborder">
-            <p class="text">北京</p>
-            </div>
-            <div class="cityborder">
-            <p class="text">北京</p>
-            </div>
-            <div class="cityborder">
-            <p class="text">北京</p>
-            </div>
-        </div>
+          </div>
         </div>
         <div class="list">
-        <div class="alpha">
+          <div class="alpha" v-for="(item, key) of cities" :key="key">
             <div class="recentCity">
-                <p class="content">A</p>
+                <p class="content">{{key}}</p>
             </div>
-            <div class="list-city">
+            <div class="list-city" v-for="innerItem of item" :key="innerItem.id">
                 <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
+                <p class="list-text">{{innerItem.name}}</p>
                 </div>
             </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            </div>
-        </div>
-        <div class="alpha">
-            <div class="recentCity">
-                <p class="content">B</p>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            <div class="list-city">
-                <div class="list-cityborder">
-                <p class="list-text">阿拉尔</p>
-                </div>
-            </div>
-            </div>
+          </div>
         </div>
     </div>
+  </div>
 </template>
 
 <script>
 import BScroll from '@better-scroll/core'
 export default {
   name: 'CityRecent',
+  props: {
+    cities: Object,
+    hotcities: Array
+  },
   mounted () {
-    this.scroll = new BScroll(this.$refs.wrapper)
+    let wrapper = document.querySelector('.wrapper')
+    this.scroll = new BScroll(wrapper)
   }
 }
 </script>
@@ -221,6 +82,14 @@ export default {
   margin-left: 5px;
   margin-top: 7px;
   position: relative;
+}
+.hot-cityborder {
+  border-radius: 3px;
+  width: 80px;
+  border: .02rem solid #ccc;
+  height: 15px;
+  margin-left: 5px;
+  margin-top: 7px;
   float: left;
 }
 .text {
