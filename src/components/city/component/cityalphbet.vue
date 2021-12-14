@@ -1,6 +1,5 @@
 <template>
   <ul class="list">
-<<<<<<< HEAD
     <li class="item" v-for="item of letters" :key="item" :ref="item"
     @click="handleLetterClick"
     @touchstart="handleTouchStart"
@@ -9,9 +8,6 @@
     >
     {{item}}
     </li>
-=======
-    <li class="item" v-for="(item, key) of cities" :key="key">{{key}}</li>
->>>>>>> origin/city-search
   </ul>
 </template>
 

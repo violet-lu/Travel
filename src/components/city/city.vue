@@ -1,16 +1,11 @@
 <template>
   <div class="city">
     <city-header></city-header>
-<<<<<<< HEAD
+    <city-search :cities="cities"></city-search>
     <city-recent :cities="cities" :hotcities="hotCities"
     :letter="letter"
     ></city-recent>
     <city-alphbet :cities="cities" @change="handleLetterChange"></city-alphbet>
-=======
-    <city-search :cities="cities"></city-search>
-    <city-recent :cities="cities" :hotcities="hotCities"></city-recent>
-    <city-alphbet :cities="cities"></city-alphbet>
->>>>>>> origin/city-search
   </div>
 </template>
 
