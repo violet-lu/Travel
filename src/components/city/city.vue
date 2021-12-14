@@ -1,8 +1,10 @@
 <template>
   <div class="city">
     <city-header></city-header>
-    <city-recent :cities="cities" :hotcities="hotCities"></city-recent>
-    <city-alphbet :cities="cities"></city-alphbet>
+    <city-recent :cities="cities" :hotcities="hotCities"
+    :letter="letter"
+    ></city-recent>
+    <city-alphbet :cities="cities" @change="handleLetterChange"></city-alphbet>
   </div>
 </template>
 
@@ -21,7 +23,8 @@ export default {
   data () {
     return {
       cities: {},
-      hotCities: []
+      hotCities: [],
+      letter: ''
     }
   },
   methods: {
@@ -36,6 +39,9 @@ export default {
         this.cities = data.cities
         this.hotCities = data.hotCities
       }
+    },
+    handleLetterChange (letter) {
+      this.letter = letter
     }
   },
   mounted () {

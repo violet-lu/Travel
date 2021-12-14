@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="list">
-          <div class="alpha" v-for="(item, key) of cities" :key="key">
+          <div class="alpha" v-for="(item, key) of cities" :key="key" :ref="key">
             <div class="recentCity">
                 <p class="content">{{key}}</p>
             </div>
@@ -43,16 +43,28 @@ export default {
   name: 'CityRecent',
   props: {
     cities: Object,
-    hotcities: Array
+    hotcities: Array,
+    letter: String
   },
   mounted () {
     let wrapper = document.querySelector('.wrapper')
     this.scroll = new BScroll(wrapper)
+  },
+  watch: {
+    letter () {
+      if (this.letter) {
+        const element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element)
+      }
+    }
   }
 }
 </script>
 
 <style scoped>
+.wrapper {
+  height: 667px;
+}
 .recent {
   width: 375px;
   height: 50px;
