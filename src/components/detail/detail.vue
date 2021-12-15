@@ -1,8 +1,9 @@
 <template>
   <div>
-    <detail-banner :sightname="sightName" :bannerimg="bannerImg" :gallerimgs="glleryImgs"></detail-banner>
+    <detail-banner :sightname="sightName" :bannerimg="bannerImg" :galleryimgs="galleryImgs"></detail-banner>
     <detail-header></detail-header>
     <detail-list></detail-list>
+    <div class="content"></div>
   </div>
 </template>
 
@@ -17,7 +18,7 @@ export default {
     return {
       sightName: '',
       bannerImg: '',
-      gallaryImgs: [],
+      galleryImgs: [],
       categoryList: {}
 
     }
@@ -38,7 +39,7 @@ export default {
         const data = res.data
         this.sightName = data.sightName
         this.bannerImg = data.bannerImg
-        this.gallaryImgs = data.gallaryImgs
+        this.galleryImgs = data.galleryImgs
         this.categoryList = data.categoryList
       }
     }
@@ -50,5 +51,7 @@ export default {
 </script>
 
 <style scoped>
-
+.content {
+  height: 50rem;
+}
 </style>
