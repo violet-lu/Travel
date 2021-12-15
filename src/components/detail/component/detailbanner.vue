@@ -1,16 +1,41 @@
 <template>
-  <div class="banner">
-    <img class="img" src="//img1.qunarzz.com/sight/p0/2109/20/204e37770f73cd73a3.water.jpg_600x330_8d8df0f9.jpg" alt="">
-    <div class="banner-content">
-      <div class="banner-title">北京环球度假区</div>
+  <div>
+    <div class="banner" @click="handleBannerClick">
+      <img class="img" :src="bannerimg">
+      <div class="banner-content">
+        <div class="banner-title">{{sightname}}</div>
       <div class="banner-number"><span class="banner-icon">&#xe624;</span>39</div>
+      </div>
     </div>
+    <common-gallery v-show="showGallery" @close="handleGalleryClose"></common-gallery>
   </div>
 </template>
 
 <script>
+import CommonGallery from 'common/gallery/Gallery'
 export default {
-  name: 'DetailBanner'
+  name: 'DetailBanner',
+  data () {
+    return {
+      showGallery: false
+    }
+  },
+  components: {
+    CommonGallery
+  },
+  methods: {
+    handleBannerClick () {
+      this.showGallery = true
+    },
+    handleGalleryClose () {
+      this.showGallery = false
+    }
+  },
+  props: {
+    sightname: String,
+    bannerimg: String,
+    gallaryimgs: Array
+  }
 }
 </script>
 
