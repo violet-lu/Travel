@@ -7,7 +7,7 @@
           </div>
           <div class="recent-city">
             <div class="cityborder">
-              <p class="text">{{this.$store.state.city}}</p>
+              <p class="text">{{this.city}}</p>
             </div>
           </div>
         </div>
@@ -39,6 +39,7 @@
 
 <script>
 import BScroll from '@better-scroll/core'
+import { mapState } from 'vuex'
 export default {
   name: 'CityRecent',
   props: {
@@ -55,6 +56,9 @@ export default {
       this.$store.dispatch('changeCity', city)
       this.$router.push('/')
     }
+  },
+  computed: {
+    ...mapState(['city'])
   },
   watch: {
     letter () {
