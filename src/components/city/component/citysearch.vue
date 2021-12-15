@@ -4,7 +4,7 @@
       placeholder="输入城市名或拼音" />
       <div class="search-content" ref="search" v-show="keyword">
         <ul>
-          <li class="search-item" v-for="item of list" :key="item.id">
+          <li class="search-item" v-for="item of list" :key="item.id" @click="handlleCityClick(item.name)">
             {{item.name}}
           </li>
           <li class="search-item" v-show="!list.length">
@@ -31,6 +31,12 @@ export default {
   },
   mounted () {
     this.scroll = new BScroll(this.$refs.search)
+  },
+  methods: {
+    handlleCityClick (city) {
+      this.$store.dispatch('changeCity', city)
+      this.$router.push('/')
+    }
   },
   watch: {
     keyword () {

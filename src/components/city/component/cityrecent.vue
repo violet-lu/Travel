@@ -7,7 +7,7 @@
           </div>
           <div class="recent-city">
             <div class="cityborder">
-              <p class="text">北京</p>
+              <p class="text">{{this.$store.state.city}}</p>
             </div>
           </div>
         </div>
@@ -16,7 +16,7 @@
             <p class="content">热门城市</p>
           </div>
           <div class="hot-city">
-            <div class="hot-cityborder" v-for="item of hotcities" :key="item.id">
+            <div class="hot-cityborder" v-for="item of hotcities" :key="item.id" @click="handlleCityClick(item.name)">
               <p class="text">{{item.name}}</p>
             </div>
           </div>
@@ -26,9 +26,9 @@
             <div class="recentCity">
                 <p class="content">{{key}}</p>
             </div>
-            <div class="list-city" v-for="innerItem of item" :key="innerItem.id">
+            <div class="list-city" v-for="innerItem of item" :key="innerItem.id" @click="handlleCityClick(innerItem.name)">
                 <div class="list-cityborder">
-                <p class="list-text">{{innerItem.name}}</p>
+                  <p class="list-text">{{innerItem.name}}</p>
                 </div>
             </div>
           </div>
@@ -49,6 +49,12 @@ export default {
   mounted () {
     let wrapper = document.querySelector('.wrapper')
     this.scroll = new BScroll(wrapper)
+  },
+  methods: {
+    handlleCityClick (city) {
+      this.$store.dispatch('changeCity', city)
+      this.$router.push('/')
+    }
   },
   watch: {
     letter () {
