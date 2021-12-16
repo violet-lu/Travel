@@ -2,8 +2,9 @@
   <div>
     <detail-banner :sightname="sightName" :bannerimg="bannerImg" :galleryimgs="galleryImgs"></detail-banner>
     <detail-header></detail-header>
-    <detail-list></detail-list>
-    <div class="content"></div>
+    <div class="content">
+      <detail-list :list="list"></detail-list>
+    </div>
   </div>
 </template>
 
@@ -19,8 +20,24 @@ export default {
       sightName: '',
       bannerImg: '',
       galleryImgs: [],
-      categoryList: {}
-
+      categoryList: {},
+      list: [{
+        title: '成人票',
+        children: [{
+          title: '成人三馆联票',
+          children: [{
+            title: '成人三馆联票--某销售点'
+          }]
+        }, {
+          title: '成人五馆联票'
+        }]
+      }, {
+        title: '学生票'
+      }, {
+        title: '儿童票'
+      }, {
+        title: '特惠票'
+      }]
     }
   },
   components: {

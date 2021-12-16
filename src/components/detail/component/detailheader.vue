@@ -40,6 +40,9 @@ export default {
   },
   mounted () {
     window.addEventListener('scroll', this.handleScroll)
+  },
+  unmounted () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
@@ -67,6 +70,7 @@ export default {
   font-size: .3rem;
 }
 .header-fixed {
+  z-index: 2;
   position: fixed;
   width: 375px;
   height: 23px;
