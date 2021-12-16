@@ -7,7 +7,7 @@
       <div class="sellImg">
         <img  class="img" :src="item.imgUrl">
       </div>
-      <router-link to="/detail/:id" tag="div" class="sellInfo">
+      <router-link :to="'/detail/' + item.id" tag="div" class="sellInfo">
         <p class="sellTitle">{{item.title}}</p>
         <p class="sellDesc">{{item.desc}}</p>
         <p class="desc">查看详情</p>
